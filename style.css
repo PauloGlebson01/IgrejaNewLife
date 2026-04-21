@@ -1,0 +1,579 @@
+/* 
+   Cores originais da igreja:
+   Primária: #910000 (Vermelho Vinho)
+   Secundária: #FFFFFF (Branco)
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fefcf5;
+    color: #1e2a2f;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, .logo, .nav-links, .btn, .sermon-title, .pastor-name {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Navbar */
+.navbar {
+    background: #FFFFFF;
+    box-shadow: 0 8px 20px rgba(145,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 16px 0;
+    transition: 0.2s;
+}
+
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-area {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #910000, #6b0000);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.logo-sub {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #910000;
+    border-left: 2px solid #ffcdcd;
+    padding-left: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #2c2e2c;
+    transition: 0.2s;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    color: #910000;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #910000;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(107deg, #fef8f5 0%, #fdf0ed 100%);
+    padding: 70px 0 60px;
+    border-bottom: 1px solid #f0dbd8;
+}
+
+.hero-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 48px;
+}
+
+.hero-content {
+    flex: 1.2;
+}
+
+.hero-tag {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #910000;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #2a1f1f;
+    margin-bottom: 20px;
+}
+
+.hero-title span {
+    color: #910000;
+    background: linear-gradient(145deg, #910000, #6b0000);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    border-left: 4px solid #910000;
+    padding-left: 20px;
+    margin: 24px 0;
+    color: #5a3e3e;
+    font-weight: 500;
+}
+
+.btn-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: #910000;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(145,0,0,0.3);
+}
+
+.btn-primary:hover {
+    background: #6b0000;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #910000;
+    color: #910000;
+}
+
+.btn-outline:hover {
+    background: #91000010;
+    transform: translateY(-2px);
+}
+
+.hero-stats {
+    flex: 0.8;
+    background: #FFFFFF;
+    padding: 28px 24px;
+    border-radius: 32px;
+    box-shadow: 0 20px 35px -12px rgba(145,0,0,0.08);
+    text-align: center;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #910000;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #8a6e6e;
+}
+
+.social-mini {
+    margin-top: 24px;
+    border-top: 1px solid #f0e0de;
+    padding-top: 20px;
+}
+
+.social-mini a {
+    color: #910000;
+    font-size: 1.3rem;
+    margin: 0 8px;
+    transition: 0.2s;
+}
+
+/* Sections */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #2a1f1f;
+    position: relative;
+    display: inline-block;
+}
+
+.section-sub {
+    color: #7a5e5e;
+    max-width: 650px;
+    margin-bottom: 48px;
+}
+
+.card-missao {
+    flex: 1;
+    background: #FFFFFF;
+    border-radius: 28px;
+    padding: 28px;
+    box-shadow: 0 5px 12px rgba(145,0,0,0.03);
+}
+
+/* Cultos */
+.cultos-section {
+    background: #fefaf8;
+}
+
+.horarios-card {
+    background: #FFFFFF;
+    border-radius: 32px;
+    padding: 32px;
+    box-shadow: 0 15px 30px rgba(145,0,0,0.05);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.horario-item {
+    flex: 1;
+    text-align: center;
+    background: #fef6f4;
+    border-radius: 28px;
+    padding: 24px 12px;
+}
+
+.horario-dia {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #910000;
+}
+
+.horario-hora {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 12px 0;
+}
+
+.horario-desc {
+    font-size: 0.85rem;
+    color: #8a6e6e;
+}
+
+/* Pastores */
+.pastores-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.pastor-card {
+    background: #FFFFFF;
+    border-radius: 32px;
+    padding: 32px 24px;
+    text-align: center;
+    flex: 1;
+    min-width: 240px;
+    box-shadow: 0 12px 24px rgba(145,0,0,0.05);
+    transition: 0.2s;
+}
+
+.pastor-avatar {
+    width: 120px;
+    height: 120px;
+    background: #fee8e5;
+    border-radius: 60px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #910000;
+}
+
+.pastor-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.pastor-role {
+    color: #910000;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.pastor-instagram {
+    margin-top: 16px;
+    font-size: 0.9rem;
+}
+
+.pastor-instagram a {
+    color: #6b0000;
+    text-decoration: none;
+}
+
+/* Endereço */
+.address-section {
+    background: #fef8f6;
+}
+
+.address-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    align-items: center;
+}
+
+.address-info {
+    flex: 1;
+}
+
+.address-icon {
+    font-size: 2rem;
+    color: #910000;
+    margin-bottom: 20px;
+}
+
+.address-detail {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.map-placeholder {
+    flex: 1;
+    background: #ede0dc;
+    border-radius: 28px;
+    min-height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    color: #8a6e6e;
+    font-weight: 500;
+    box-shadow: 0 8px 18px rgba(145,0,0,0.1);
+    flex-direction: column;
+}
+
+/* Footer */
+footer {
+    background: #2a1a1a;
+    color: #f0deda;
+    padding: 48px 0 32px;
+}
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.footer-col h4 {
+    color: #FFFFFF;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.footer-col p, .footer-col a {
+    color: #e0cbc7;
+    text-decoration: none;
+    line-height: 1.7;
+}
+
+.social-icons a {
+    margin-right: 15px;
+    font-size: 1.3rem;
+    color: #e0b8b0;
+    transition: 0.2s;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #5a3e3e;
+    font-size: 0.8rem;
+}
+
+/* Responsivo */
+@media (max-width: 800px) {
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #FFFFFF;
+        padding: 20px 0;
+        gap: 16px;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+    .mobile-menu {
+        display: block;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-grid {
+        flex-direction: column;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Estilos para imagens dos pastores */
+.pastor-avatar {
+    width: 120px;
+    height: 120px;
+    background: #fee8e5;
+    border-radius: 60px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.pastor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 60px;
+    transition: transform 0.3s ease;
+}
+
+.pastor-card:hover .pastor-img {
+    transform: scale(1.05);
+}
+
+/* Fallback caso a imagem não carregue */
+.pastor-avatar img {
+    background-color: #fee8e5;
+}
+
+/* Address Section */
+.address-section {
+    background: #fef8f6;
+    padding: 80px 0;
+}
+
+.address-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    align-items: center;
+}
+
+.address-info {
+    flex: 1;
+    min-width: 280px;
+}
+
+.address-icon {
+    font-size: 2rem;
+    color: #910000;
+    margin-bottom: 20px;
+}
+
+.address-detail {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* Map Container */
+.map-container {
+    flex: 1;
+    min-width: 280px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 8px 18px rgba(145,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #ede0dc;
+}
+
+.map-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(145,0,0,0.15);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .address-section {
+        padding: 60px 0;
+    }
+    
+    .address-flex {
+        gap: 32px;
+    }
+    
+    .map-container iframe {
+        height: 280px;
+    }
+    
+    .address-detail {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-container iframe {
+        height: 240px;
+    }
+}
